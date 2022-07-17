@@ -1,0 +1,134 @@
+﻿#body
+{
+    font-family: Tahoma;
+}
+
+.CommentsContainer
+{
+    direction: rtl;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    overflow: auto;
+}
+
+.CommentContainer
+{
+    float: right;
+    width: 780px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: solid 1px #CCCCCC;
+    height: 100%;
+    margin: 9px 7px 3px 2px;
+    background-color:#FEFEFE;
+}
+.InfoBar
+{
+   
+    height: 30px;
+    background-color:white;
+    border-bottom: 1px solid #DDDDDD;
+    padding: 12px 8px 2px 5px;
+    float: right;
+    border-top-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.CommentContainerAleternative
+{
+    /*background-color:#fde5c9;*/
+    padding: 5px 5px 15px 5px;
+    margin: 10px 3px 3px 3px;
+    overflow: auto;
+}
+
+
+.DateTime
+{
+    float: right;
+    color: #333333;
+    font-size:12px;
+    font-family:Tahoma;
+  
+    padding:2px;
+}
+.AutherName
+{
+    margin-right:5px;
+    float: right;
+    width: 250px;
+    color: black;
+     font-size:12px;
+    font-family:Tahoma;
+    
+}
+
+.Answer
+{
+    float: left;
+    padding-left: 10px;
+ 
+    
+}
+
+.FormContainer
+{
+    margin-right:6px;
+    float: right;
+    padding-top: 10px;
+}
+
+.FormTextBox
+{
+    background-color: Teal;
+    font-size: large;
+    height: 30px;
+}
+.Content
+{
+   
+   
+   
+    float: right;
+    padding-right: 16px;
+    padding-top: 10px;
+    color: black;
+    line-height:180%;
+    
+    font-family: tahoma;
+    font-size: 12px;
+    width:95%;
+     padding-bottom:9px;
+     
+   /*
+  position: relative; word-break: break-all;
+ word-break: break-word;
+    -webkit-hyphens: auto;
+       -moz-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+     */       
+}
+.Content pre
+{
+    font-family:Tahoma;
+}
+.ReAnswer
+{
+    border: solid 1px #CCCCCC;
+    height: 100%;
+    background-color: #ECFAFE;
+    width: 725px;
+    float: right;
+    margin-top: 8px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,49 @@
+﻿@font-face
+{
+font-family: 'koodakE';
+src: url(      '../font/W_koodak.eot' );
+src: url(      '../font/W_koodak.eot?#iefix' ) format(      'embedded-opentype' ), url('../font/W_koodak.woff' ) format(      'woff' ), url('../font/W_koodak.TTF' ) format(      'truetype' );
+}
+.fontT
+{
+    font-family:koodakE;
+    font-size:15px;
+    color:#4958B5;
+}
+.CSSTEXTBOX
+{
+    font-family:Tahoma;
+    font-size:11px;
+    text-align:right;
+    padding:8px;
+    -moz-border-radius: 5px;	-webkit-border-radius: 5px;	 border-radius:5px;
+    border:1px solid #ccc;
+}
+.CSSTEXTBOX_en
+{
+    font-family:Tahoma;
+    font-size:11px;
+    text-align:left;
+    padding:8px;
+    -moz-border-radius: 5px;	-webkit-border-radius: 5px;	 border-radius:5px;
+    border:1px solid #ccc;
+}
+.CSSTEXTBOX:hover
+{
+    background-color:#E5EFFD;
+}
+.CSSTEXTBOX_en:hover
+{
+    background-color:#9FBBDD;
+}
+table tr
+{
+    font-family:Tahoma;
+    font-size:11px;
+}
+.divTitle
+{
+    padding:4px;
+    background-color:#F3FBF6;
+    border:1px solid #BED5D4;
+}

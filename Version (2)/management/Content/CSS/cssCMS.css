@@ -1,0 +1,170 @@
+@charset "utf-8";
+/* Eghbaldar.com */
+body, div, p, h1, h2, h3, h4, ul, li, table{
+margin:0;
+padding:0;
+border:none;
+}
+body
+{
+	font-family:Tahoma;
+	font-size:11px;
+padding:0px;
+background-color:#EDF2DD;
+direction:rtl;
+}
+#body
+{
+    margin-right:50px;
+    margin-top:20px;
+width:1209px;
+background-color:#EDF2DD;
+}
+#master{
+float:right;
+
+background-repeat:repeat-y;
+line-height : 110%; 
+}
+#header
+{
+	padding:3px;
+width:1209px;
+height:100%;
+
+}
+#middle
+{
+    
+    float:right
+}
+#vasat
+{
+    margin-right:10px;
+    margin-bottom:30px;
+	border:1px solid #ccc;
+	padding:3px;
+	float:right; width:970px
+}
+#footer
+{
+	padding:3px;
+float:right;
+background-color:#bed5d4;
+width:1209px;
+height:100px;
+}
+/*
+#vasat{
+float:left;
+background-color:#ff5;
+width:708px;
+}
+*/
+#left{
+float:left;
+background-color:#997;
+width:100px;
+height:200px;
+}
+#right{
+float:right;
+background-color:#995;
+width:100px;
+height:200px;
+}
+.CSSTEXTBOX
+{
+    font-family:Tahoma;
+    font-size:12px;
+    text-align:right;
+    padding:8px;
+    -moz-border-radius: 3px;	-webkit-border-radius: 3px;	 border-radius:3px;
+    border:1px solid #ccc;
+}
+.CSSTEXTBOX_en
+{
+    font-family:Tahoma;
+    font-size:12px;
+    text-align:left;
+    padding:8px;
+    -moz-border-radius: 3px;	-webkit-border-radius: 3px;	 border-radius:3px;
+    border:1px solid #ccc;
+}
+/*.CSSTEXTBOX:hover
+{
+    background-color:#E5EFFD;
+}
+.CSSTEXTBOX_en:hover
+{
+    background-color:#9FBBDD;
+}*/
+
+#accordian {
+	width: 210px;
+	color: #353535;
+	float:right;
+
+}
+/*heading styles*/
+#accordian h3 {
+	font-size: 11px;
+	line-height: 43px;
+	padding: 0 10px;
+	cursor: pointer;
+	background:#FFFFFF;
+	/*background: linear-gradient(#4E4C4F, #4E4C4F);*/
+	border:1px solid #c4c4c4;
+	-moz-border-radius: 1px;	-webkit-border-radius: 1px;	 border-radius:1px;
+	margin-bottom:4px;
+}
+/*heading hover effect*/
+#accordian h3:hover {
+	color:#2F5EB6;
+}
+/*iconfont styles*/
+#accordian h3 span {
+	font-size: 13px;
+	margin-right: 10px;
+}
+/*list items*/
+#accordian  li {
+	list-style-type: none;
+	
+}
+#accordian li: hover {
+background:#7CB4D9;
+}
+/*links*/
+#accordian ul ul  a {	width:180px;
+	color: black;
+	text-decoration: none;
+	font-weight:bold;
+	font-size: 11px;
+	line-height: 33px;
+	display: block;
+	padding: 0 15px;
+	/*transition for smooth hover animation*/
+	transition: all 0.15s;background-color:#FFF;
+
+}
+/*hover effect on links*/
+#accordian ul ul  a:hover {width:175px;
+	background:#7CB4D9;
+	border-right: 5px solid #2F5EB6;
+	color:White;
+}
+/*Lets hide the non active LIs by default*/
+#accordian ul ul {
+	display: none;
+}
+#accordian li.active ul {
+	display: block;
+}
+.titrAccordian
+{
+   
+        font-weight:normal;
+        font-size:12px;
+        font-weight:bold;
+}

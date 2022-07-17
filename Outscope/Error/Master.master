@@ -1,0 +1,134 @@
+﻿<%@ Master Language="VB" CodeFile="Master.master.vb" Inherits="Master" %>
+
+<%@ Register Src="~/UserControl/Footer.ascx" TagName="Footer" TagPrefix="uc5" %>
+<%@ Register Src="~/UserControl/MenuTop.ascx" TagName="MenuTop" TagPrefix="uc4" %>
+<%@ Register Src="~/UserControl/Search.ascx" TagName="Search" TagPrefix="uc6" %>
+<%@ Register Src="../../UserControl/Marquee.ascx" TagName="Marquee" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  <title>استخدام جو | جستجوی کار و آگهی استخدامی</title>
+    <meta name="description" content="آگهی استخدام های کل کشور , استخدام در همه رشته ها, اطلاع از آگهی استخدام بانک ها ، ثبت رزومه کاری, آزمون استخدامی" />
+    <meta name="keywords" content="آگهی, استخدام مهندس, آگهی استخدام روز, استخدام جو ،استخدام بانک ملی, استخدام, بازار کار, ثبت رزومه, استخدام بازاریاب, Employment, Estekhdamjoo, Employment in banks, government employment, job advert, استخدام در بانک ملت, استخدام همراه اول, استخدام آموزش و پرورش, آزمون استخدامی" />
+    <link rel="canonical" href="http://www.estekhdamjoo.ir/" />
+    <meta name="robots" content="noodp,noydir" />
+    <meta property='og:locale' content='fa_IR' />
+    <meta property='og:title' content='استخدام ، آگهی استخدام - پرتال استخدامی کشور' />
+    <meta property='og:description' content='آگهی استخدام های کل کشور , استخدام در همه رشته ها, اطلاع از آگهی استخدام بانک ها ، ثبت رزومه کاری, آزمون استخدامی' />
+    <meta property='og:url' content='http://www.estekhdamjoo.ir/' />
+    <meta property='og:site_name' content='پرتال استخدامی کشور' />
+    <meta property='og:type' content='website' />
+    <%--<meta name="google-site-verification" content="2ibIt8UcAxJ_zakKZTMe2S1DXx5bYTmkXbmKD3F-MVY" />--%>
+    <meta name="copyright" content="2013 , 2014" />
+    <meta content="Rasht" name="city" />
+    <meta content="Iran" name="country" />
+    <link rel="SHORTCUT ICON" href="../../content/images/androidIco.png">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../../content/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="../../content/menu/Hoz/drop.css" rel="stylesheet" type="text/css" />
+    <link href="../../content/menu/Ver/cssVer.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        /*jQuery time*/
+        $(document).ready(function () {
+            $("#accordian h3").click(function () {
+                //slide up all the link lists
+                $("#accordian ul ul").slideUp();
+                //slide down the link list below the h3 clicked - only if its closed
+                if (!$(this).next().is(":visible")) {
+                    $(this).next().slideDown();
+                }
+            })
+        })
+    </script>
+    <script language="javascript" type="text/javascript">
+        var IM = new Array(3);
+        IM[0] = new Image;
+        IM[0].src = '<%= ResolveUrl("agahi.jpg") %>';
+        IM[1] = new Image;
+        IM[1].src = '<%= ResolveUrl("agahi1.png") %>';
+        IM[2] = new Image;
+        IM[2].src = '<%= ResolveUrl("agahi2.png") %>';
+
+
+        var i = 0;
+        function SHOW() {
+            i = Math.floor(Math.random() * 3);
+            document.getElementById('img1').src = IM[i].src;
+            setTimeout("SHOW()", 2000);
+
+        }
+        
+    </script>
+</head>
+<body onload="SHOW()">
+    <form id="form1" runat="server">
+    <div id="body">
+        <div id="header">
+            <div id="headTop">
+                <div style="float: right;">
+                    <a href="http://www.estekhdamjoo.ir">
+                        <img src='<%= ResolveUrl( "../../content/images/logo.png") %>' /></a>
+                </div>
+                <%--<div style="float: right; padding-top: 6px; width: 809px; text-align: left; padding-left: 5px;">
+                    <img src="../../content/sms.gif" class="imgADStopSite" /></div>
+                <div style="float: right; padding-top: 7px;">
+                    <div id="btnEnter">
+                        ورود
+                    </div>
+                    <div id="btnReg">
+                        ثبت نام
+                    </div>
+                </div>--%>
+            </div>
+            <div id="headMenu">
+                <table>
+                    <tr>
+                        <td>
+                            <a href='<%= ResolveUrl("../../feed/") %>'>
+                                <img src='<%= ResolveUrl("../../content/images/rss.png") %>' />
+                            </a>
+                        </td>
+                        <td style="padding-right: 5px;">
+                            <div style="background-color: #fff; padding: 3px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+                                border-radius: 5px; color: #000;">
+                                <a href='<%= ResolveUrl("../../") %>'>صفحه اول</a>
+                            </div>
+                        </td>
+                        <td style="padding-right: 5px;">
+                            <a href='<%= ResolveUrl("../../درباره-ما/") %>'>درباره ما</a>
+                        </td>
+                        <td style="padding-right: 5px;">
+                            <a href='<%= ResolveUrl("../../تماس-با-ما/") %>'>تماس با ما</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="headDown">
+                <uc6:Search ID="Search1" runat="server" />
+            </div>
+        </div>
+        <div id="master">
+            <div id="menu">
+                <uc4:MenuTop ID="MenuTop1" runat="server" />
+            </div>
+            <div id="marequee">
+                <uc1:Marquee ID="Marquee1" runat="server" />
+            </div>
+            <div id="main">
+                <div id="centerOther">
+                    <div style="margin-top: 3px;">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <uc5:Footer ID="Footer1" runat="server" />
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,294 @@
+﻿<%@ Master Language="VB" CodeFile="CMS.master.vb" Inherits="Management_Admin_CMS"  %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>پنل مدیریتی شهر دات کام</title>
+    <link href="../Content/CSS/cssCMS.css" rel="stylesheet" type="text/css" />
+    
+   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        /*jQuery time*/
+        $(document).ready(function () {
+            $("#accordian h3").click(function () {
+                //slide up all the link lists
+                $("#accordian ul ul").slideUp();
+                //slide down the link list below the h3 clicked - only if its closed
+                if (!$(this).next().is(":visible")) {
+                    $(this).next().slideDown();
+                }
+            })
+        })
+    </script>
+   
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+  
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+        .style2
+        {
+            width: 121px;
+        }
+        .style12
+        {
+            width: 18px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="body">
+        <div id="master">
+            <div id="header">
+                <div>
+                <a href="http://www.estekhdamjoo.ir" target="_blank">
+                  
+                    <img src="../../content/images/logo-cms.PNG" />
+                    </a>
+                    &nbsp;<table class="style1">
+                        <tr>
+                            <td class="style12">
+                                <img src="../Content/Images/date.png" />
+                            </td>
+                            <td>
+                                <asp:Label ID="lblDate" Style="color: #134543;" runat="server"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style12">
+                                <img src="../Content/Images/user.gif" />
+                            </td>
+                            <td>
+                                <asp:LoginName ID="LoginName1" runat="server" />
+                            </td>
+                        </tr>
+                       <%-- <tr>
+                            <td class="style12">
+                                <asp:ImageButton ID="btnBack" runat="server" ImageUrl="~/Management/Content/Images/back.jpeg" />
+                            </td>
+                            <td>
+                                بازگشت به صفحه مدیریتی
+                            </td>
+                        </tr>--%>
+                        <tr>
+                            <td class="style12">
+                                &nbsp;</td>
+                            <td>
+                                <asp:LoginStatus ID="LoginStatus1" runat="server" Font-Underline="False" 
+                                    LoginText="ورود" LogoutText="خــــــــــــروج" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+           
+            <div id="middle" >
+ <div id="accordian">
+        <ul>
+            <li>
+                <h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <img src='<%= ResolveUrl("../../content/images/mnu2_job.png") %>' alt="location" />
+                            </td>
+                            <td>
+                                <span class="titrAccordian">آگهی استخدامی</span>
+                            </td>
+                        </tr>
+                    </table>
+                </h3>
+        
+                <ul>
+                       <a href="e_advertisment.aspx">
+                        <asp:Label ID="NameLabel" runat="server" Text="درج آگهی استخدامی جدید" /></a>
+                     <a href="m_advertisment.aspx">
+                        <asp:Label ID="Label1" runat="server" Text="مدیریت آگهی های استخدامی" /></a>
+                </ul>
+            </li>
+            <li>
+                <h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <img src='<%= ResolveUrl("../../content/images/mnu2_news.png") %>' alt="degree" />
+                            </td>
+                            <td>
+                                <span class="titrAccordian">اخبار استخدامی</span>
+                            </td>
+                        </tr>
+                    </table>
+                </h3>
+                <ul>
+                      <a href="e_news.aspx">
+                        <asp:Label ID="Label2" runat="server" Text="درج خبر استخدامی جدید" /></a>
+                      <a href="e_news.aspx">
+                        <asp:Label ID="Label3" runat="server" Text="مدیریت اخبار استخدامی" /></a>
+                </ul>
+            </li>
+
+
+             <li>
+                <h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <img src='<%= ResolveUrl("../../content/images/mnu2_famous.png") %>' alt="degree" />
+                            </td>
+                            <td>
+                                <span class="titrAccordian">کارآفرینان برتر</span>
+                            </td>
+                        </tr>
+                    </table>
+                </h3>
+                <ul>
+                      <a href="e_famous.aspx">
+                        <asp:Label ID="Label11" runat="server" Text="درج کارآفرین جدید" /></a>
+                      <a href="e_famous.aspx">
+                        <asp:Label ID="Label12" runat="server" Text="مدیریت کارآفرینان" /></a>
+                </ul>
+            </li>
+
+
+             <li>
+                <h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <img src='<%= ResolveUrl("../../content/images/mnu2_question.png") %>' alt="degree" />
+                            </td>
+                            <td>
+                                <span class="titrAccordian">نمونه سوالات </span>
+                            </td>
+                        </tr>
+                    </table>
+                </h3>
+                <ul>
+                      <a href="question.aspx">
+                        <asp:Label ID="Label8" runat="server" Text="درج نمونه سوال جدید" /></a>
+                      <a href="questionList.aspx">
+                        <asp:Label ID="Label9" runat="server" Text="لیست نمونه سوالات" /></a>
+                         <a href="questionCategory.aspx">
+                        <asp:Label ID="Label10" runat="server" Text="دسته نمونه سوالات" /></a>
+                </ul>
+            </li>
+            <li>
+                <h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <img src='<%= ResolveUrl("../../content/images/mnu2_master.png") %>' alt="business" />
+                            </td>
+                            <td>
+                                <span class="titrAccordian">آگهی کارفرمایان</span>
+                            </td>
+                        </tr>
+                    </table>
+                </h3>
+                <ul>
+                     <a href="agahi.aspx">
+                        <asp:Label ID="Label4" runat="server" Text="مدیریت آگهی کارفرمایان" /></a>
+                </ul>
+            </li>
+             <li>
+                <h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <img src='<%= ResolveUrl("../../content/images/mnu2_comment.png") %>' alt="field" />
+                            </td>
+                            <td>
+                                <span class="titrAccordian">نظرات کاربران</span>
+                            </td>
+                        </tr>
+                    </table>
+                </h3>
+                <ul>
+             <a href="comment.aspx">
+                        <asp:Label ID="Label7" runat="server" Text="مدیریت نظرات" /></a></ul>
+            </li>
+            <li>
+                <h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <img src='<%= ResolveUrl("../../content/images/mnu2_mail.png") %>' alt="field" />
+                            </td>
+                            <td>
+                                <span class="titrAccordian">تماس با ما</span>
+                            </td>
+                        </tr>
+                    </table>
+                </h3>
+                <ul>
+             <a href="contact.aspx">
+                        <asp:Label ID="Label5" runat="server" Text="مدیریت تماس ها" /></a></ul>
+            </li>
+            <li>
+                <h3>
+                    <table>
+                        <tr>
+                            <td>
+                                <img src='<%= ResolveUrl("../../content/images/mnu2_sitemap.png") %>' alt="bank" />
+                            </td>
+                            <td>
+                                <span class="titrAccordian">نقشه سایت</span>
+                            </td>
+                        </tr>
+                    </table>
+                </h3>
+                <ul>
+                   <a href="e_sitemap.aspx">
+                        <asp:Label ID="Label6" runat="server" Text="افزودن به نقشه سایت" /></a>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div  id="vasat">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder></div>
+            </div>
+            <%--<div id="footer">
+                <table class="style1">
+                    <tr>
+                        <td>
+                            <table class="style1">
+                               
+                                <tr>
+                                    <td class="style2">
+                                        تعداد کاربران آنلاین:
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style2">
+                                        تعداد کاربران مهمان :</td>
+                                    <td>
+                                        &nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="lblOnilneUsers" runat="server" Style="font-weight: 700; color: #800000"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </div>--%>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

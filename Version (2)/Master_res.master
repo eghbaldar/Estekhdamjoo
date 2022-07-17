@@ -1,0 +1,233 @@
+﻿<%@ Master Language="VB" CodeFile="Master_res.master.vb" Inherits="Master" %>
+
+<%@ Register Src="UserControl/E_GlobalSpecial.ascx" TagName="E_GlobalSpecial" TagPrefix="uc1" %>
+<%@ Register Src="UserControl/E_News.ascx" TagName="E_News" TagPrefix="uc2" %>
+<%@ Register Src="UserControl/MenuVertical.ascx" TagName="MenuVertical" TagPrefix="uc3" %>
+<%@ Register Src="UserControl/MenuTop.ascx" TagName="MenuTop" TagPrefix="uc4" %>
+<%@ Register Src="UserControl/Footer.ascx" TagName="Footer" TagPrefix="uc5" %>
+<%@ Register Src="UserControl/Search.ascx" TagName="Search" TagPrefix="uc6" %>
+<%@ Register Src="UserControl/newsLetters.ascx" TagName="newsLetters" TagPrefix="uc7" %>
+<%@ Register Src="UserControl/Question.ascx" TagName="Question" TagPrefix="uc8" %>
+<%@ Register Src="UserControl/E_SpecialTitle.ascx" TagName="SpecialTitle" TagPrefix="uc9" %>
+<%@ Register Src="UserControl/P-Search.ascx" TagName="P_Search" TagPrefix="uc10" %>
+<%@ Register Src="UserControl/E_Famous.ascx" TagName="E_Famous" TagPrefix="uc11" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>استخدام جو | جستجوی کار و آگهی استخدامی</title>
+    <meta name="keywords" content="آگهی, استخدام مهندس, آگهی استخدام روز, استخدام جو ،استخدام بانک ملی, استخدام,  آگهی استخدام های کل کشور ، استخدام روز ایران، آگهی متناسب با رشته شما، درج رایگان آگهی، ارسال آگهی از طریق پیامک , بازار کار, ثبت رزومه, استخدام بازاریاب, Employment, Estekhdamjoo, Employment in banks, government employment, job advert, استخدام در بانک ملت, استخدام همراه اول, استخدام آموزش و پرورش, آزمون استخدامی" />
+    <link rel="canonical" href="http://www.estekhdamjoo.ir/" />
+    <meta name="robots" content="noodp,noydir" />
+    <meta name="copyright" content="2013 , 2014" />
+    <link rel="SHORTCUT ICON" href="content/images/logo_.png" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="content/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="content/css/Comments.css" rel="stylesheet" type="text/css" />
+    <link href="content/menu/Hoz/drop.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript">  
+    </script>
+    <script type="text/javascript">
+        /*jQuery time*/
+        $(document).ready(function () {
+            $("#accordian h3").click(function () {
+                //slide up all the link lists
+                $("#accordian ul ul").slideUp();
+                //slide down the link list below the h3 clicked - only if its closed
+                if (!$(this).next().is(":visible")) {
+                    $(this).next().slideDown();
+                }
+            })
+        })
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-55300022-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="content/css/Resp.css" rel="stylesheet" type="text/css" />
+</head>
+<body onload="SHOW()">
+    <form id="form1" runat="server">
+    <%--منوی بالا و کادر جستجو--%>
+    <div id="SubheadMenu">
+        <div id="headMenu">
+            <div style="float: right;">
+                <div>
+                    <table>
+                        <tr>
+                            <td style="padding-right: 5px; width: 45px;">
+                                <a class="res_mnu_top" href='<%= ResolveUrl("~/") %>'>خانه</a>
+                            </td>
+                            <td style="padding-right: 5px; width: 70px;">
+                                <a class="res_mnu_top" href='<%= ResolveUrl("درباره-ما/") %>'>درباره ما</a>
+                            </td>
+                            <td style="padding-right: 7px; width: 70px;">
+                                <a class="res_mnu_top" href='<%= ResolveUrl("تماس-با-ما/") %>'>تماس با ما</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div style="float: left;" id="res_search_1">
+                <div align="left" style="color: black; font-family: 'b yekan'; font-size: 16px; float: right;">
+                    <div style="height: 36px; width: 267px; padding: 2px; font-family: 'b yekan'; -moz-box-shadow: inset 0 0 3px #CCCCCC;
+                        -webkit-box-shadow: inset 0 0 3px #CCCCCC; box-shadow: inset  0 0 3px #CCCCCC;
+                        padding-right: 13px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;
+                        font-size: 13px; color: #8B8B8B; text-align: right; float: left; margin-left: 10px;">
+                        <div style="float: right; margin-top: 6px;">
+                            جستجو :
+                        </div>
+                        <asp:TextBox ID="txtSearch" runat="server" CssClass="txtSearch">   </asp:TextBox>
+                        <div style="float: right; margin-top: 2px;">
+                            <asp:ImageButton ForeColor="Transparent" AlternateText="" ID="btnSearch" ImageUrl="~/content/images/Capt.png"
+                                runat="server" />
+                        </div>
+                    </div>
+                </div>
+                <div class="lbl-Date">
+                    امروز
+                    <asp:Label ID="lblDate" runat="server"></asp:Label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%--لوگو و تبلیغات--%>
+    <div id="Subheader">
+        <div id="res_logo_adv_2">
+            <div>
+                <img src='<%= ResolveUrl("content/images/estekhdam.png")%>' />
+            </div>
+            <div id="res_text_search_2">
+                <table style="width: 100%;">
+                    <tr>
+                        <td>
+                            جستجو :
+                        </td>
+                        <td>
+                            <asp:TextBox ID="TextBox1" runat="server" CssClass="res_txtSearch">   </asp:TextBox>
+                        </td>
+                        <td style="text-align: left;">
+                            <asp:ImageButton ForeColor="Transparent" AlternateText="" ID="ImageButton1" ImageUrl="~/content/images/Capt.png"
+                                runat="server" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <a href="http://www.aradrobo.org/arad/1" target="_blank">
+                    <img border="0" src='<%= ResolveUrl("content/images/arad.gif") %>' width="468" style="border: 1px solid #CCCCCC;
+                        background-color: White; padding: 1px;" height="60" alt="آراد " />
+                </a>
+            </div>
+        </div>
+        <div id="header">
+            <table style="width: 100%;">
+                <tr>
+                    <td>
+                        <img src='<%= ResolveUrl("content/images/logo_.png")%>' />
+                        <img src='<%= ResolveUrl("content/images/estekhdam.png")%>' />
+                    </td>
+                    <td style="text-align: left;">
+                        <a href="http://www.aradrobo.org/arad/1" target="_blank">
+                            <img border="0" src='<%= ResolveUrl("content/images/arad.gif") %>' width="468" style="border: 1px solid #CCCCCC;
+                                background-color: White; padding: 1px;" height="60" alt="آراد " /></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <%-- --%>
+    <div id="p_search">
+        <uc10:P_Search ID="Search1" runat="server" />
+    </div>
+    <div id="menu">
+        <uc4:MenuTop ID="MenuTop1" runat="server" />
+    </div>
+    <div id="body">
+        <div id="topbox">
+            <div id="global">
+                <div id="global-item">
+                    <uc1:E_GlobalSpecial ID="E_GlobalSpecial1" runat="server" />
+                </div>
+            </div>
+            <div id="Letters">
+                <uc7:newsLetters ID="newsLetters1" runat="server" />
+            </div>
+        </div>
+        <div id="res_menu_res">
+            <ul id="nav">
+                <li class="parent">منوی اصلی
+                    <ul class="sub-nav">
+                        <li class="res_mnu_li"><a class="res_mnu_top" href='<%= ResolveUrl("~/") %>'>خانه</a></li>
+                        <li class="res_mnu_li"><a class="res_mnu_top" href='<%= ResolveUrl("درباره-ما/") %>'>
+                            درباره ما</a></li>
+                        <li class="res_mnu_li"><a class="res_mnu_top" href='<%= ResolveUrl("تماس-با-ما/") %>'>
+                            تماس با ما</a></li>
+                    </ul>
+                </li>
+                <li class="parent2">منوی استخدام
+                    <ul class="sub-nav2">
+                        <li class="res_mnu_li"><a class="res_mnu_top" href='<%= ResolveUrl("~/") %>'>صفحه نخست</a>
+                        </li>
+                        <li class="res_mnu_li"><a class="res_mnu_top" href='<%= ResolveUrl("~/آرشیو-استخدامی-ویژه/") %>'>
+                            استخدام های ویژه</a> </li>
+                        <li class="res_mnu_li"><a class="res_mnu_top" href='<%= ResolveUrl("~/آرشیو-اخبار-استخدامی/") %>'>
+                            اخبار استخدامی</a> </li>
+                        <li class="res_mnu_li"><a class="res_mnu_top" href='<%= ResolveUrl("~/درج-آگهی-استخدامی-رایگان/") %>'>
+                            درج آگهی استخدام ( رایگان )</a></li>
+                        <li class="res_mnu_li"><a class="res_mnu_top" href='<%= ResolveUrl("~/نحوه-ی-نگارش-رزومه/") %>'>
+                            نحوه نگارش رزومه</a></li>
+                        <li class="res_mnu_li"><a class="res_mnu_top" href='<%= ResolveUrl("~/نمونه-سوالات-استخدامی/") %>'>
+                            نمونه سوالات استخدامی</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="right">
+            <div id="MenuVertical">
+                <uc3:MenuVertical ID="MenuVertical1" runat="server" />
+            </div>
+            <div class="E_News" id="res_news_1">
+                <uc2:E_News ID="E_News1" runat="server" />
+            </div>
+            <div class="E_News" id="res_news_2">
+                <uc11:E_Famous ID="E_Famous1" runat="server" />
+            </div>
+            <div class="E_News" id="res_news_3">
+                <uc9:SpecialTitle ID="E_sepecial1" runat="server" />
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $('.parent').click(function () {
+                    $('.sub-nav').toggleClass('visible');
+                });
+                $('.parent2').click(function () {
+                    $('.sub-nav2').toggleClass('visible');
+                });
+            });
+        </script>
+        <div id="centerMaster2">
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <uc5:Footer ID="Footer1" runat="server" />
+    </div>
+    </form>
+</body>
+</html>
